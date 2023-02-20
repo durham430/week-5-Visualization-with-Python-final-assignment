@@ -85,7 +85,7 @@ app.layout = html.Div(children=[
                                         # Create an division for adding dropdown helper text for report type
                                         html.Div(
                                             [
-                                            html.H2('Report Type:', style={'margin-right': '2em'}),
+                                            html.H2('Report Type:', style={'margin-right': '2em'})
                                             ]
                                         ),
                                         # TASK2: Add a dropdown
@@ -106,7 +106,7 @@ app.layout = html.Div(children=[
                                        # Create an division for adding dropdown helper text for choosing year
                                         html.Div(
                                             [
-                                            html.H2('Choose Year:', style={'margin-right': '2em'}),
+                                            html.H2('Choose Year:', style={'margin-right': '2em'})
                                             ]
                                         ),
                                         dcc.Dropdown(id='input-year', 
@@ -143,7 +143,9 @@ app.layout = html.Div(children=[
                 Output(component_id='plot3', component_property='children'),
                 Output(component_id='plot4', component_property='children'),
                 Output(component_id='plot5', component_property='children')],
-               # REVIEW4: Holding output state till user enters all the form information. In this case, it will be chart type and year
+                [Input(component_id='input-type',component_property='value'),
+                Input(component_id='input-year',component_property='value')],
+ # REVIEW4: Holding output state till user enters all the form information. In this case, it will be chart type and year
                [State("plot1", 'children'), State("plot2", "children"),
                 State("plot3", "children"), State("plot4", "children"),
                 State("plot5", "children")
