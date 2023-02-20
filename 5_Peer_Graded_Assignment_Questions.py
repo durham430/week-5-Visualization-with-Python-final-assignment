@@ -106,7 +106,7 @@ app.layout = html.Div(children=[
                                        # Create an division for adding dropdown helper text for choosing year
                                         html.Div(
                                             [
-                                            html.H2('Choose Year:', style={'margin-right': '2em'})
+                                            html.H2('Choose Year:', style={'margin-right': '2em'}),
                                             ]
                                         ),
                                         dcc.Dropdown(id='input-year', 
